@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/myHomeFragment">
+
+    <fragment
+        android:id="@+id/myHomeFragment"
+        android:name="com.kaveri.jetpackcomponentdemo.fragments.MyHomeFragment"
+        android:label="@string/my_home_fragment">
+
+        <action
+            android:id="@+id/myHomeFragment_to_mySecondFragment"
+            app:destination="@+id/mySecondFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            ></action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/mySecondFragment"
+        android:name="com.kaveri.jetpackcomponentdemo.fragments.MySecondFragment"
+        android:label="@string/my_second_fragment">
+
+        <action
+            android:id="@+id/mySecondFragment_to_myThirdFragment"
+            app:destination="@+id/myThirdFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            ></action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/myThirdFragment"
+        android:name="com.kaveri.jetpackcomponentdemo.fragments.MyThirdFragment"
+        android:label="@string/my_third_fragment">
+
+        <action
+            android:id="@+id/myThirdFragment_to_mySecondFragment"
+            app:popUpTo="@id/mySecondFragment"
+            ></action>
+
+
+        <action
+            android:id="@+id/myThirdFragment_to_myHomeFragment"
+            app:popUpTo="@id/myHomeFragment"
+            ></action>
+    </fragment>
+
+
+
+</navigation>
