@@ -5,8 +5,10 @@ import android.content.ContextWrapper
 import android.content.Intent
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.kaveri.jetpackcomponentdemo.dao.ListItem
 import com.kaveri.jetpackcomponentdemo.navigators.MainNavigator
 import com.kaveri.jetpackcomponentdemo.repositories.DemoRepository
+import com.kaveri.jetpackcomponentdemo.viewholders.NameViewHolder
 import java.lang.ref.WeakReference
 
 class MainViewModel<T>(val demoRepository: DemoRepository): ViewModel() {
@@ -25,8 +27,10 @@ class MainViewModel<T>(val demoRepository: DemoRepository): ViewModel() {
     fun getNavigator() : T? {
         return navigator.get()
     }
+
     fun uploadData() {
         ( getNavigator() as MainNavigator).uploadData()
+
     }
 
     fun uploadDataViaBoundservice() {
@@ -38,7 +42,5 @@ class MainViewModel<T>(val demoRepository: DemoRepository): ViewModel() {
             messageFRomService.postValue(it)
         }), message = message)
     }
-
-    var str:String = "6"
 
 }

@@ -1,5 +1,6 @@
 package com.kaveri.jetpackcomponentdemo.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,6 @@ import com.kaveri.jetpackcomponentdemo.databinding.FragmentMyThirdBinding
 
 /**
  * A simple [Fragment] subclass.
- * Use the [MyThirdFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 class MyThirdFragment : Fragment() {
@@ -21,6 +21,10 @@ class MyThirdFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
     }
 
     override fun onCreateView(

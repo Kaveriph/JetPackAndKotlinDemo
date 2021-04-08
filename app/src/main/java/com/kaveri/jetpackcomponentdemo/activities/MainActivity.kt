@@ -83,9 +83,9 @@ class MainActivity : AppCompatActivity(),   MainNavigator {
 
     private fun setListeners() {
         mainViewModel.screenName.observe(this,
-        Observer {
-            Log.d(this.componentName.className, "screen $it")
-        })
+            {
+                Log.d(this.componentName.className, "screen $it")
+            })
     }
 
     override fun onStart() {
@@ -105,7 +105,6 @@ class MainActivity : AppCompatActivity(),   MainNavigator {
             serviceIntent
         )
         else startService(serviceIntent)
-        mainViewModel.setContextWrapper(this)
     }
 
     override fun uploadDataViaBoundservice() {

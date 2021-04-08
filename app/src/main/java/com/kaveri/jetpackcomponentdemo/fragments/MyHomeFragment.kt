@@ -19,7 +19,6 @@ import org.koin.androidx.viewmodel.ext.android.getSharedViewModel
 
 /**
  * A simple [Fragment] subclass.
- * Use the [MyHomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 class MyHomeFragment : Fragment() {
@@ -52,6 +51,9 @@ class MyHomeFragment : Fragment() {
         binding.uploadButton.setOnClickListener {
             getSharedViewModel<MainViewModel<MainNavigator>>().uploadData()
         }
+        binding.listButton.setOnClickListener {
+            findNavController().navigate(R.id.myHomeFragment_to_myListFragment)
+        }
     }
 
     override fun onResume(){
@@ -67,11 +69,11 @@ class MyHomeFragment : Fragment() {
 
     private fun setListeners() {
         getSharedViewModel<MainViewModel<MainNavigator>>().screenName.observe(requireActivity(),
-            Observer {
+            {
                 Log.d(TAG, "screen $it")
             })
         getSharedViewModel<MainViewModel<MainNavigator>>().messageFRomService.observe( requireActivity(),
-            Observer {
+            {
             binding.statusMsgTv.text = it
             })
     }

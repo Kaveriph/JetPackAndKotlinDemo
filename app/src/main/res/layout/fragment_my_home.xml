@@ -15,7 +15,7 @@
         android:gravity="center"
         android:text="@string/my_home_fragment"
         android:textAllCaps="true"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,12 +27,12 @@
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_primary_dark"
         android:padding="20dp"
-        android:text="Next"
+        android:text="@string/next"
         android:textColor="@color/design_default_color_background"
         app:layout_constraintBottom_toTopOf="@+id/uploadButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/uploadButton"
@@ -40,24 +40,36 @@
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_primary_dark"
         android:padding="20dp"
-        android:text="Upload"
+        android:text="@string/upload"
+        android:textColor="@color/design_default_color_background"
+        app:layout_constraintBottom_toTopOf="@+id/listButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextButton" />
+
+    <Button
+        android:id="@+id/listButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary_dark"
+        android:padding="20dp"
+        android:text="@string/list"
         android:textColor="@color/design_default_color_background"
         app:layout_constraintBottom_toTopOf="@+id/statusMsgTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextButton"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/uploadButton" />
 
     <TextView
         android:id="@+id/statusMsgTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:text="kjhkjh"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uploadButton"></TextView>
+        app:layout_constraintTop_toBottomOf="@+id/uploadButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
